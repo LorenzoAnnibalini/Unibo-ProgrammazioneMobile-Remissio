@@ -1,6 +1,6 @@
 //
 //  LookScreenView.swift
-//  Test
+//  Remissio
 //
 //  Created by Lorenzo Annibalini on 29/04/25.
 //

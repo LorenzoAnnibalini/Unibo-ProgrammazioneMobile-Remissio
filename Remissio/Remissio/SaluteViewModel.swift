@@ -1,3 +1,10 @@
+//
+//  SaluteViewModel.swift
+//  Remissio
+//
+//  Created by Lorenzo Annibalini on 24/04/25.
+//
+
 import SwiftUI
 
 class SaluteViewModel: ObservableObject {

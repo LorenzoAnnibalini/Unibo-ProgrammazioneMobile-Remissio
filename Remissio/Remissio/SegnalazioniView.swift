@@ -1,3 +1,10 @@
+//
+//  SegnalazioniView.swift
+//  Remissio
+//
+//  Created by Lorenzo Annibalini on 27/04/25.
+//
+
 import SwiftUI
 import Foundation
 

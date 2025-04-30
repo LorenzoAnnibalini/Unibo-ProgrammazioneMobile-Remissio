@@ -1,3 +1,10 @@
+//
+//  StatoSaluteManager.swift
+//  Remissio
+//
+//  Created by Lorenzo Annibalini on 27/04/25.
+//
+
 import Foundation
 import CoreData
 

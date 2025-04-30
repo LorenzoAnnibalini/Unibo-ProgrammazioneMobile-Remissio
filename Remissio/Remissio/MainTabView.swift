@@ -1,24 +1,49 @@
 //
-//  ContentView.swift
+//  MainTabView.swift
 //  Remissio
 //
-//  Created by Lorenzo Annibalini on 30/04/25.
+//  Created by Lorenzo Annibalini on 22/03/25.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainTabView: View {
+    
+    @EnvironmentObject var authManager: AuthenticationManager
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        TabView {
+            
+            HomePageView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+            
+            SegnalazioniView()
+                .tabItem {
+                    Image(systemName: "exclamationmark.bubble.fill")
+                    Text("Segnalazioni")
+                }
+            
+            ProfiloView()
+                .environmentObject(authManager)
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profilo")
+                }
         }
-        .padding()
+        .onAppear {
+            // Modifica lo sfondo della TabBar
+            UITabBar.appearance().backgroundColor = UIColor.secondarySystemBackground
+        }
+        .accentColor(.blue)
     }
 }
 
-#Preview {
-    ContentView()
+struct MainTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainTabView()
+    }
 }

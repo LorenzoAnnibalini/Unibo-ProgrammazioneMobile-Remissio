@@ -1,6 +1,6 @@
 //
 //  StatisticView.swift
-//  Test
+//  Remissio
 //
 //  Created by Lorenzo Annibalini on 17/04/25.
 //

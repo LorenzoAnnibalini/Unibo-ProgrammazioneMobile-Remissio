@@ -1,6 +1,6 @@
 //
 //  InserimentoStatoSaluteView.swift
-//  Test
+//  Remissio
 //
 //  Created by Lorenzo Annibalini on 24/04/25.
 //

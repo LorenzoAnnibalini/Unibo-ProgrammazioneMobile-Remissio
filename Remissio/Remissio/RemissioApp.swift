@@ -2,16 +2,23 @@
 //  RemissioApp.swift
 //  Remissio
 //
-//  Created by Lorenzo Annibalini on 30/04/25.
+//  Created by Lorenzo Annibalini on 10/03/25.
 //
 
 import SwiftUI
 
 @main
 struct RemissioApp: App {
+    @StateObject var authManager = AuthenticationManager()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if authManager.isProtectionEnabled && !authManager.isAuthenticated {
+                LockScreenView(authManager: authManager)
+            } else {
+                MainTabView()
+                    .environmentObject(authManager)
+            }
         }
     }
 }

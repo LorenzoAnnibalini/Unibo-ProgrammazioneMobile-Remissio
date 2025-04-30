@@ -1,6 +1,6 @@
 //
 //  MailView.swift
-//  Test
+//  Remissio
 //
 //  Created by Lorenzo Annibalini on 27/04/25.
 //
