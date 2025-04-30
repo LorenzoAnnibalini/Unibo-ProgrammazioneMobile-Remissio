@@ -1,0 +1,5 @@
+{
+	"NSLocationWhenInUseUsageDescription" = "Abbiamo bisogno della tua posizione per arricchire il report settimanale";
+	"NSCameraUsageDescription" = "Per scattare una foto profilo";
+	"NSPhotoLibraryUsageDescription" = "Per selezionare una foto dal tuo album";
+}
