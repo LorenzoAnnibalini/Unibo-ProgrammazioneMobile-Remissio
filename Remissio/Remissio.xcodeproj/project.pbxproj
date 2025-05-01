@@ -29,9 +29,22 @@
 		95D514132DC2139B00D3BD22 /* RemissioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemissioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		955CFE542DC35FAB006D050E /* Exceptions for "Remissio" folder in "Remissio" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 95D513F82DC2139600D3BD22 /* Remissio */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		95D513FB2DC2139600D3BD22 /* Remissio */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				955CFE542DC35FAB006D050E /* Exceptions for "Remissio" folder in "Remissio" target */,
+			);
 			path = Remissio;
 			sourceTree = "<group>";
 		};
