@@ -74,19 +74,19 @@ struct HomePageView: View {
                         }.padding()
 
                         VStack(spacing: 15) {
-                            HomeCardView(title: "Diario Sintomi", icon: "list.bullet.rectangle", color: .orange, destination: AnyView(DiarioSintomiView()))
+                            HomeCardView(title: "📘 Diario Sintomi", icon: "list.bullet.rectangle", color: .orange, destination: AnyView(DiarioSintomiView()))
                             
-                            StatisticView(title: "Monitoraggio Generale", percent: .constant(viewModel.sintomiPercent), color: scoreColorSintomi)
+                            StatisticView(title: "🎯 Monitoraggio Generale", percent: .constant(viewModel.sintomiPercent), color: scoreColorSintomi)
                             
-                            HomeCardView(title: "Grafici Andamento", icon: "chart.xyaxis.line", color: .blue, destination: AnyView(GraficiAndamentoView(viewModel: viewModel)))
+                            HomeCardView(title: "📈 Grafici Andamento", icon: "chart.xyaxis.line", color: .blue, destination: AnyView(GraficiAndamentoView(viewModel: viewModel)))
 
-                            StatisticView(title: "Scariche", percent: .constant(viewModel.scarichePercent), color: scoreColorScariche)
-                            StatisticView(title: "Sangue", percent: .constant(viewModel.sanguePercent), color: scoreColorSangue)
+                            StatisticView(title: "🚽 Scariche", percent: .constant(viewModel.scarichePercent), color: scoreColorScariche)
+                            StatisticView(title: "🩸 Sangue", percent: .constant(viewModel.sanguePercent), color: scoreColorSangue)
 
                             // Gauge Peso Calcolato
                             HStack(spacing: 50) {
                                 Gauge(value: viewModel.pesoAttuale, in: pesoMin...pesoMax) {
-                                    Text("Peso")
+                                    Text("⚖️ Peso")
                                 } currentValueLabel: {
                                     Text("\(viewModel.pesoAttuale, specifier: "%.1f") kg")
                                         .font(.title2)
