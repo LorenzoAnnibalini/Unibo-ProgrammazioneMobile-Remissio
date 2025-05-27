@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct DiarioSintomiView: View {
+    @StateObject private var locationManager = LocationManager()
     @Environment(\.colorScheme) var colorScheme
     @State private var statiSalute: [StatoSaluteSettimanale] = []
     

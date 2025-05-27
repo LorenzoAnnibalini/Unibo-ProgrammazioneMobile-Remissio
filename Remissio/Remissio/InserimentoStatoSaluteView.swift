@@ -5,6 +5,8 @@
 //  Created by Lorenzo Annibalini on 24/04/25.
 //
 import SwiftUI
+import CoreLocation
+
 
 struct InputField: View {
     var label: String
@@ -43,6 +45,7 @@ struct InserimentoStatoSaluteViewWrapper: View {
 }
 
 struct InserimentoStatoSaluteView: View {
+    @StateObject private var locationManager = LocationManager()
     @Binding var statoSalute: StatoSaluteSettimanale
     @State private var settimana = ""
     @State private var peso = ""
@@ -120,6 +123,7 @@ struct InserimentoStatoSaluteView: View {
             Alert(title: Text("Dati non validi"), message: Text(alertMessage), dismissButton: .default(Text("Ok")))
         }
         .onAppear {
+            locationManager.requestLocation()
             settimana = statoSalute.settimana
             peso = String(statoSalute.peso)
             statoSaluteGenerale = statoSalute.statoSaluteGenerale
@@ -148,11 +152,17 @@ struct InserimentoStatoSaluteView: View {
     }
 
     private func salvaStatoSalute() {
+        guard locationManager.isMonitoring else {
+               alertMessage = "Attendi che venga rilevata la posizione GPS."
+               showAlert = true
+               return
+           }
         guard let pesoDouble = Double(peso), pesoDouble > 0 else {
             alertMessage = "Peso non valido. Deve essere maggiore di 0."
             showAlert = true
             return
         }
+
 
         statoSalute = StatoSaluteSettimanale(
             settimana: settimana.isEmpty ? "Settimana 1" : settimana,
@@ -161,7 +171,12 @@ struct InserimentoStatoSaluteView: View {
             percentualeSangue: sangueSlider,
             peso: pesoDouble,
             statoSaluteGenerale: statoSaluteGenerale,
-            tipologiaCacca: tipologiaCacca
+            tipologiaCacca: tipologiaCacca,
+            latitude: locationManager.latitude,
+            longitude: locationManager.longitude
         )
+        
+        locationManager.stopLocationRequest()
     }
+
 }

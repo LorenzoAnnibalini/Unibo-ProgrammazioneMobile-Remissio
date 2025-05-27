@@ -11,6 +11,12 @@ import MapKit
 struct DettagliSegnalazioneView: View {
     var stato: StatoSaluteSettimanale
 
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 45.4642, longitude: 9.19),
+        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+    )
+    @State private var hasSetRegion = false
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -34,23 +40,29 @@ struct DettagliSegnalazioneView: View {
                     Text("📍 Posizione registrata:")
                         .font(.headline)
 
-                    Map(coordinateRegion: .constant(
-                        MKCoordinateRegion(
-                            center: CLLocationCoordinate2D(latitude: lat, longitude: lon),
-                            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-                        )
-                    ))
-                    .frame(height: 250)
-                    .cornerRadius(15)
-                    .shadow(radius: 5)
+                    Map(coordinateRegion: $region)
+                        .frame(height: 250)
+                        .cornerRadius(15)
+                        .shadow(radius: 5)
                 }
             }
             .padding()
         }
         .navigationTitle("Dettagli Segnalazione")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            if !hasSetRegion, let lat = stato.latitude, let lon = stato.longitude {
+                DispatchQueue.main.async {
+                    region.center = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                    hasSetRegion = true
+                    print("📍 Coordinate caricate: \(lat), \(lon)")
+                }
+            }
+        }
+
     }
 }
+
 
 struct DettagliSegnalazioneView_Previews: PreviewProvider {
     static var previews: some View {

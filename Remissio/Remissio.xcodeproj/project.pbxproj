@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		955CFE542DC35FAB006D050E /* Exceptions for "Remissio" folder in "Remissio" target */ = {
+		95462B3A2DE5A4D30097FE58 /* Exceptions for "Remissio" folder in "Remissio" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -43,7 +43,7 @@
 		95D513FB2DC2139600D3BD22 /* Remissio */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				955CFE542DC35FAB006D050E /* Exceptions for "Remissio" folder in "Remissio" target */,
+				95462B3A2DE5A4D30097FE58 /* Exceptions for "Remissio" folder in "Remissio" target */,
 			);
 			path = Remissio;
 			sourceTree = "<group>";
@@ -411,6 +411,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Remissio/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Remissio/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Questa app necessita della fotocamera per scattare foto del profilo.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is required to fill the coordinates fields in the Add Trip Sheet.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "L'app ha bisogno di salvare immagini nella tua libreria.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,6 +443,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Remissio/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Remissio/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Questa app necessita della fotocamera per scattare foto del profilo.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is required to fill the coordinates fields in the Add Trip Sheet.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "L'app ha bisogno di salvare immagini nella tua libreria.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
