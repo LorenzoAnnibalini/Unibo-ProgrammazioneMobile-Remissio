@@ -28,9 +28,9 @@ struct DettagliSegnalazioneView: View {
 
                 Group {
                     Text("🚽 Scariche: \(stato.scariche)")
-                    Text("🩸 Percentuale sangue: \(String(format: "%.2f", stato.percentualeSangue))%")
-                    Text("💩 Tipologia cacca: \(String(format: "%.1f", stato.tipologiaCacca))")
-                    Text("⚖️ Peso: \(stato.peso) kg")
+                    Text("🩸 Percentuale sangue: \(String(format: "%.1f", stato.percentualeSangue))%")
+                    Text("💩 Tipologia cacca: \(descrizioneCacca(Int(stato.tipologiaCacca)))")
+                    Text("⚖️ Peso: \(String(format: "%.1f", stato.peso)) kg")
                     Text("🏋🏻 Stato generale: \(stato.statoSaluteGenerale)")
                 }
                 .font(.body)
@@ -61,6 +61,16 @@ struct DettagliSegnalazioneView: View {
         }
 
     }
+    
+    private func descrizioneCacca(_ valore: Int) -> String {
+        switch valore {
+        case 0: return "Liquida"
+        case 1: return "Crema"
+        case 2: return "Formata"
+        default: return "Dura"
+        }
+    }
+
 }
 
 

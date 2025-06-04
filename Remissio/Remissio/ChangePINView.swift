@@ -11,6 +11,8 @@ struct ChangePINView: View {
     @EnvironmentObject var authManager: AuthenticationManager
     @Environment(\.dismiss) private var dismiss
 
+    var onComplete: ((Bool) -> Void)? // ✅ callback
+
     @State private var currentPIN: String = ""
     @State private var newPIN: String = ""
     @State private var confirmPIN: String = ""
@@ -51,6 +53,7 @@ struct ChangePINView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Annulla") {
+                        onComplete?(false) // ❌ non salvato
                         dismiss()
                     }
                 }
@@ -72,10 +75,10 @@ struct ChangePINView: View {
 
         if success {
             errorMessage = nil
+            onComplete?(true) // ✅ PIN salvato
             dismiss()
         } else {
             errorMessage = "PIN attuale errato."
         }
     }
-
 }

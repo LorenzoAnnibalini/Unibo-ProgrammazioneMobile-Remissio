@@ -41,6 +41,20 @@ class AuthenticationManager: ObservableObject {
         savePIN(newPIN)
         return true
     }
+    
+    func checkPINFromKeychain() -> Bool {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service,
+            kSecAttrAccount as String: account,
+            kSecReturnData as String: true
+        ]
+        
+        var item: AnyObject?
+        let status = SecItemCopyMatching(query as CFDictionary, &item)
+        return status == errSecSuccess
+    }
+
 
     func savePIN(_ pin: String) {
         //Attivo il flag per la protezione con pin

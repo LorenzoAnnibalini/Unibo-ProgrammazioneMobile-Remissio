@@ -144,10 +144,10 @@ struct InserimentoStatoSaluteView: View {
 
     private func descrizioneCacca(_ valore: Int) -> String {
         switch valore {
-        case 0: return "Dura"
-        case 1: return "Formata"
-        case 2: return "Crema"
-        default: return "Liquida"
+        case 0: return "Liquida"
+        case 1: return "Crema"
+        case 2: return "Formata"
+        default: return "Dura"
         }
     }
 

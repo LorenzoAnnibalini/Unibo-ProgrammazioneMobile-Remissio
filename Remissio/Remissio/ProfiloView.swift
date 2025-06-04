@@ -14,8 +14,11 @@ struct ProfiloView: View {
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
-    
+
     @State private var showingPINChangeView = false
+    @State private var localProtectionEnabled: Bool = UserDefaults.standard.bool(forKey: "protectionEnabled")
+    @State private var isActivatingProtection: Bool = false
+    @State private var pendingEnableProtection: Bool = false
 
     let sessi = ["Maschio", "Femmina", "Altro"]
     let etàOptions = Array(0...120).map { String($0) }
@@ -94,26 +97,22 @@ struct ProfiloView: View {
                         }
                     }
             }
-            
+
             Section(header: Text("Sicurezza")) {
-                Toggle("Protezione attiva", isOn: $authManager.isProtectionEnabled)
-                    .onChange(of: authManager.isProtectionEnabled) { value in
-                        if value {
-                            showingPINChangeView = true // richiesta inserimento nuovo PIN
+                Toggle("Protezione attiva", isOn: $localProtectionEnabled)
+                    .onChange(of: localProtectionEnabled) { newValue in
+                        if newValue {
+                            pendingEnableProtection = true
                         } else {
                             authManager.disableProtection()
                         }
                     }
 
                 Button("Cambia PIN") {
+                    isActivatingProtection = false
                     showingPINChangeView = true
                 }
             }
-            .sheet(isPresented: $showingPINChangeView) {
-                ChangePINView()
-                    .environmentObject(authManager)
-            }
-
 
             Button(action: {
                 viewModel.saveProfilo()
@@ -131,6 +130,32 @@ struct ProfiloView: View {
             }
         }
         .navigationTitle("Profilo")
+
+        // Sheet per cambiare/creare PIN
+        .sheet(isPresented: $showingPINChangeView) {
+            ChangePINView(onComplete: { success in
+                if success {
+                    authManager.isProtectionEnabled = true
+                    localProtectionEnabled = true
+                } else {
+                    if isActivatingProtection {
+                        localProtectionEnabled = false
+                    }
+                }
+            })
+            .environmentObject(authManager)
+        }
+
+        // Sheet trigger separato
+        .onChange(of: pendingEnableProtection) { shouldShow in
+            if shouldShow {
+                isActivatingProtection = true
+                showingPINChangeView = true
+                pendingEnableProtection = false
+            }
+        }
+
+        // Sheet per immagine
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
             ImagePicker(sourceType: sourceType, selectedImage: $inputImage)
         }

@@ -413,6 +413,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Remissio/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Questa app necessita della fotocamera per scattare foto del profilo.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Per sbloccare l'app con Face ID";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is required to fill the coordinates fields in the Add Trip Sheet.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "L'app ha bisogno di salvare immagini nella tua libreria.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,6 +446,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Remissio/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Questa app necessita della fotocamera per scattare foto del profilo.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Per sbloccare l'app con Face ID";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is required to fill the coordinates fields in the Add Trip Sheet.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "L'app ha bisogno di salvare immagini nella tua libreria.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
