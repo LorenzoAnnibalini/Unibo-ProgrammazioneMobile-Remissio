@@ -175,6 +175,7 @@
 				TargetAttributes = {
 					952D9E6D2DF83622005838F4 = {
 						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
 					};
 					952D9E7D2DF8362B005838F4 = {
 						CreatedOnToolsVersion = 16.2;
@@ -393,12 +394,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Remissio/Preview Content\"";
 				DEVELOPMENT_TEAM = Z2JQ5FR5DG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Questa app necessita della fotocamera per scattare foto del profilo.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Per sbloccare l'app con Face ID";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is required to fill the coordinates fields in the Add Trip Sheet.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "L'app ha bisogno di salvare immagini nella tua libreria.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -412,6 +418,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Remissio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -422,12 +429,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Remissio/Preview Content\"";
 				DEVELOPMENT_TEAM = Z2JQ5FR5DG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Questa app necessita della fotocamera per scattare foto del profilo.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Per sbloccare l'app con Face ID";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location is required to fill the coordinates fields in the Add Trip Sheet.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "L'app ha bisogno di salvare immagini nella tua libreria.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
