@@ -25,4 +25,4 @@ Offrire uno strumento semplice, intuitivo e affidabile che aiuti i pazienti a mo
 
 ## 🛠️ Requisiti
 - **Xcode 15** o superiore
-**iOS 16** o superiore
+- **iOS 16** o superiore
